@@ -59,19 +59,30 @@ const SidebarItem = ({ icon: Icon, label, to, badge }: { icon: any, label: strin
   );
 };
 
-export const Sidebar = () => (
-  <aside className="w-80 bg-[#F1F5F9]/50 backdrop-blur-xl border-l border-slate-200/60 flex flex-col sticky top-0 h-screen z-50">
-    <div className="p-8 flex items-center gap-4">
-      <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl flex items-center justify-center shadow-xl shadow-indigo-200">
-        <ShieldCheck className="text-white" size={28} />
-      </div>
-      <div>
-        <h1 className="text-xl font-black text-slate-900 tracking-tight">المكتب الكويتي</h1>
-        <div className="flex items-center gap-1.5">
-          <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
-          <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">HR Intelligence</p>
+export const Sidebar = ({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) => (
+  <aside className={cn(
+    "fixed inset-y-0 right-0 w-80 bg-[#F1F5F9]/50 backdrop-blur-xl border-l border-slate-200/60 flex flex-col z-50 transition-transform duration-300 lg:translate-x-0 lg:static lg:h-screen",
+    isOpen ? "translate-x-0" : "translate-x-full"
+  )}>
+    <div className="p-8 flex items-center justify-between">
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 bg-gradient-to-br from-indigo-600 to-violet-700 rounded-2xl flex items-center justify-center shadow-xl shadow-indigo-200">
+          <ShieldCheck className="text-white" size={28} />
+        </div>
+        <div>
+          <h1 className="text-xl font-black text-slate-900 tracking-tight">المكتب الكويتي</h1>
+          <div className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse" />
+            <p className="text-[10px] text-slate-400 uppercase font-black tracking-widest">HR Intelligence</p>
+          </div>
         </div>
       </div>
+      <button 
+        onClick={onClose}
+        className="lg:hidden p-2 text-slate-400 hover:text-indigo-600 transition-colors"
+      >
+        <LogOut size={20} className="rotate-180" />
+      </button>
     </div>
 
     <div className="flex-1 overflow-y-auto px-6 py-4 space-y-8 custom-scrollbar">

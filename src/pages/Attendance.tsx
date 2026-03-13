@@ -20,26 +20,26 @@ const attendanceData = [
 
 export const Attendance = () => {
   return (
-    <div className="p-10 space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-3xl font-black text-slate-900">الحضور والدوام</h2>
-          <p className="text-slate-500 mt-1">متابعة سجلات الحضور والانصراف اليومية.</p>
+    <div className="p-4 md:p-10 space-y-6 md:space-y-8">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="text-center sm:text-right">
+          <h2 className="text-2xl md:text-3xl font-black text-slate-900">الحضور والدوام</h2>
+          <p className="text-slate-500 mt-1 text-sm md:text-base">متابعة سجلات الحضور والانصراف اليومية.</p>
         </div>
-        <div className="flex gap-3">
-          <button className="bg-white border border-slate-200 px-6 py-3.5 rounded-2xl text-sm font-bold text-slate-600 flex items-center gap-2 hover:bg-slate-50 transition-all">
-            <Download size={20} />
-            <span>تصدير التقرير</span>
+        <div className="flex flex-wrap justify-center gap-3 w-full sm:w-auto">
+          <button className="flex-1 sm:flex-none bg-white border border-slate-200 px-4 md:px-6 py-3 md:py-3.5 rounded-2xl text-xs md:text-sm font-bold text-slate-600 flex items-center justify-center gap-2 hover:bg-slate-50 transition-all">
+            <Download size={18} />
+            <span>تصدير</span>
           </button>
-          <button className="bg-indigo-600 text-white px-6 py-3.5 rounded-[1.25rem] text-sm font-black flex items-center gap-2.5 shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all">
-            <Calendar size={20} />
+          <button className="flex-1 sm:flex-none bg-indigo-600 text-white px-4 md:px-6 py-3 md:py-3.5 rounded-[1.25rem] text-xs md:text-sm font-black flex items-center justify-center gap-2.5 shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all">
+            <Calendar size={18} />
             <span>سجل الإجازات</span>
           </button>
         </div>
       </div>
 
       {/* Stats Summary */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
         <div className="glass-card p-6 rounded-[2rem] flex items-center gap-4">
           <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
             <CheckCircle2 size={28} />

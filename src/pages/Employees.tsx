@@ -24,13 +24,13 @@ const employees = [
 
 export const Employees = () => {
   return (
-    <div className="p-10 space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-3xl font-black text-slate-900 text-right">شؤون الموظفين</h2>
-          <p className="text-slate-500 mt-1 text-right">إدارة بيانات الموظفين وعقودهم بشكل مباشر.</p>
+    <div className="p-4 md:p-10 space-y-6 md:space-y-8">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="text-center sm:text-right">
+          <h2 className="text-2xl md:text-3xl font-black text-slate-900">شؤون الموظفين</h2>
+          <p className="text-slate-500 mt-1 text-sm md:text-base">إدارة بيانات الموظفين وعقودهم بشكل مباشر.</p>
         </div>
-        <button className="bg-indigo-600 text-white px-6 py-3.5 rounded-[1.25rem] text-sm font-black flex items-center gap-2.5 shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all">
+        <button className="w-full sm:w-auto bg-indigo-600 text-white px-6 py-3.5 rounded-[1.25rem] text-sm font-black flex items-center justify-center gap-2.5 shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all">
           <UserPlus size={20} />
           <span>إضافة موظف جديد</span>
         </button>

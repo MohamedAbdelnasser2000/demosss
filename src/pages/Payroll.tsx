@@ -20,56 +20,56 @@ const payrollData = [
 
 export const Payroll = () => {
   return (
-    <div className="p-10 space-y-8">
-      <div className="flex items-center justify-between">
-        <div>
-          <h2 className="text-3xl font-black text-slate-900">المالية والرواتب</h2>
-          <p className="text-slate-500 mt-1">إدارة الرواتب، المكافآت، والاستقطاعات.</p>
+    <div className="p-4 md:p-10 space-y-6 md:space-y-8">
+      <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="text-center sm:text-right">
+          <h2 className="text-2xl md:text-3xl font-black text-slate-900">المالية والرواتب</h2>
+          <p className="text-slate-500 mt-1 text-sm md:text-base">إدارة الرواتب، المكافآت، والاستقطاعات.</p>
         </div>
-        <button className="bg-indigo-600 text-white px-6 py-3.5 rounded-[1.25rem] text-sm font-black flex items-center gap-2.5 shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all">
+        <button className="w-full sm:w-auto bg-indigo-600 text-white px-6 py-3.5 rounded-[1.25rem] text-sm font-black flex items-center justify-center gap-2.5 shadow-xl shadow-indigo-200 hover:bg-indigo-700 transition-all">
           <CreditCard size={20} />
           <span>معالجة الرواتب</span>
         </button>
       </div>
 
       {/* Financial Overview */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div className="lg:col-span-2 glass-card p-8 rounded-[3rem] bg-gradient-to-br from-indigo-600 to-indigo-800 text-white relative overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="lg:col-span-2 glass-card p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] bg-gradient-to-br from-indigo-600 to-indigo-800 text-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl -mr-32 -mt-32" />
           <div className="relative z-10 flex flex-col h-full justify-between">
             <div className="flex justify-between items-start">
               <div>
-                <p className="text-indigo-100 text-xs font-black uppercase tracking-widest mb-2">إجمالي الرواتب لهذا الشهر</p>
-                <h3 className="text-4xl font-black tracking-tight">12,450 KWD</h3>
+                <p className="text-indigo-100 text-[10px] md:text-xs font-black uppercase tracking-widest mb-2">إجمالي الرواتب لهذا الشهر</p>
+                <h3 className="text-2xl md:text-4xl font-black tracking-tight">12,450 KWD</h3>
               </div>
-              <div className="p-4 bg-white/20 backdrop-blur-md rounded-2xl border border-white/20">
-                <Wallet size={32} />
+              <div className="p-3 md:p-4 bg-white/20 backdrop-blur-md rounded-2xl border border-white/20">
+                <Wallet size={24} className="md:w-8 md:h-8" />
               </div>
             </div>
-            <div className="flex gap-8 mt-12">
+            <div className="flex flex-wrap gap-4 md:gap-8 mt-8 md:mt-12">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
-                  <ArrowUpRight size={20} className="text-emerald-400" />
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-emerald-500/20 flex items-center justify-center">
+                  <ArrowUpRight size={16} className="text-emerald-400 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-indigo-200 uppercase">المكافآت</p>
-                  <p className="font-black">1,200 KWD</p>
+                  <p className="text-[8px] md:text-[10px] font-bold text-indigo-200 uppercase">المكافآت</p>
+                  <p className="text-sm md:text-base font-black">1,200 KWD</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-rose-500/20 flex items-center justify-center">
-                  <ArrowDownRight size={20} className="text-rose-400" />
+                <div className="w-8 h-8 md:w-10 md:h-10 rounded-xl bg-rose-500/20 flex items-center justify-center">
+                  <ArrowDownRight size={16} className="text-rose-400 md:w-5 md:h-5" />
                 </div>
                 <div>
-                  <p className="text-[10px] font-bold text-indigo-200 uppercase">الاستقطاعات</p>
-                  <p className="font-black">450 KWD</p>
+                  <p className="text-[8px] md:text-[10px] font-bold text-indigo-200 uppercase">الاستقطاعات</p>
+                  <p className="text-sm md:text-base font-black">450 KWD</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="glass-card p-8 rounded-[3rem] flex flex-col justify-between">
+        <div className="glass-card p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] flex flex-col gap-6 justify-between">
           <h4 className="text-lg font-black text-slate-900">حالة الدفع</h4>
           <div className="space-y-6">
             <div className="flex items-center justify-between">

@@ -109,26 +109,26 @@ const ActivityItem = ({ date, title, subtitle, empId, delay }: { date: string, t
 
 export const Dashboard = () => {
   return (
-    <div className="p-10 space-y-10">
+    <div className="p-4 md:p-10 space-y-6 md:space-y-10">
       {/* Welcome Banner */}
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative rounded-[3rem] overflow-hidden bg-gradient-to-r from-indigo-600 via-indigo-700 to-violet-800 p-10 text-white shadow-2xl shadow-indigo-200"
+        className="relative rounded-[2rem] md:rounded-[3rem] overflow-hidden bg-gradient-to-r from-indigo-600 via-indigo-700 to-violet-800 p-6 md:p-10 text-white shadow-2xl shadow-indigo-200"
       >
         <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
           <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl -mr-48 -mt-48" />
           <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-400 rounded-full blur-3xl -ml-32 -mb-32" />
         </div>
         
-        <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="space-y-4 text-center md:text-right">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20">
-              <Sparkles size={16} className="text-amber-300" />
-              <span className="text-xs font-black uppercase tracking-widest">تحديثات النظام الجديدة متاحة</span>
+        <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-8">
+          <div className="space-y-3 md:space-y-4 text-center md:text-right">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-md px-3 py-1 md:px-4 md:py-1.5 rounded-full border border-white/20">
+              <Sparkles size={14} className="text-amber-300" />
+              <span className="text-[10px] md:text-xs font-black uppercase tracking-widest">تحديثات النظام الجديدة متاحة</span>
             </div>
-            <h2 className="text-4xl font-black tracking-tight leading-tight">أهلاً بك مجدداً، <span className="text-indigo-200">مدير النظام</span> 👋</h2>
-            <p className="text-indigo-100/80 font-medium max-w-lg">لديك اليوم 3 موافقات معلقة و 5 موظفين جدد انضموا للفريق. دعنا نلقي نظرة على أداء هذا الشهر.</p>
+            <h2 className="text-2xl md:text-4xl font-black tracking-tight leading-tight">أهلاً بك مجدداً، <span className="text-indigo-200">مدير النظام</span> 👋</h2>
+            <p className="text-indigo-100/80 text-sm md:text-base font-medium max-w-lg mx-auto md:mx-0">لديك اليوم 3 موافقات معلقة و 5 موظفين جدد انضموا للفريق. دعنا نلقي نظرة على أداء هذا الشهر.</p>
           </div>
           <div className="hidden lg:block relative">
             <div className="w-48 h-48 bg-white/10 backdrop-blur-2xl rounded-[3rem] border border-white/20 flex items-center justify-center animate-float">
@@ -139,24 +139,24 @@ export const Dashboard = () => {
       </motion.div>
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8">
         <StatCard title="الموظفون" value="1,248" icon={Users} color="bg-indigo-600" trend="+12% نمو" delay={0.1} />
         <StatCard title="الحضور اليومي" value="94.2%" icon={Clock} color="bg-emerald-500" trend="مستقر" delay={0.2} />
         <StatCard title="طلبات الإجازة" value="24" icon={CalendarDays} color="bg-amber-500" trend="3 جديدة" delay={0.3} />
         <StatCard title="ميزانية الرواتب" value="$245k" icon={Wallet} color="bg-rose-500" trend="-2% توفير" delay={0.4} />
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-10">
         <motion.div 
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5 }}
-          className="lg:col-span-2 glass-card rounded-[3rem] p-8 flex flex-col gap-8"
+          className="lg:col-span-2 glass-card rounded-[2rem] md:rounded-[3rem] p-6 md:p-8 flex flex-col gap-6 md:gap-8"
         >
           <div className="flex items-center justify-between">
-            <h3 className="text-xl font-black text-slate-900">تحليل القوى العاملة</h3>
+            <h3 className="text-lg md:text-xl font-black text-slate-900">تحليل القوى العاملة</h3>
           </div>
-          <div className="h-[300px] w-full">
+          <div className="h-[250px] md:h-[300px] w-full">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={chartData}>
                 <defs>
@@ -166,8 +166,8 @@ export const Dashboard = () => {
                   </linearGradient>
                 </defs>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#F1F5F9" />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94A3B8', fontSize: 12, fontWeight: 700 }} dy={10} />
-                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94A3B8', fontSize: 12, fontWeight: 700 }} />
+                <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#94A3B8', fontSize: 10, fontWeight: 700 }} dy={10} />
+                <YAxis axisLine={false} tickLine={false} tick={{ fill: '#94A3B8', fontSize: 10, fontWeight: 700 }} />
                 <Tooltip />
                 <Area type="monotone" dataKey="value" stroke="#4F46E5" strokeWidth={4} fillOpacity={1} fill="url(#colorValue)" />
               </AreaChart>
@@ -179,9 +179,9 @@ export const Dashboard = () => {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.6 }}
-          className="glass-card rounded-[3rem] p-8 flex flex-col gap-8"
+          className="glass-card rounded-[2rem] md:rounded-[3rem] p-6 md:p-8 flex flex-col gap-6 md:gap-8"
         >
-          <h3 className="text-xl font-black text-slate-900">توزيع النوع</h3>
+          <h3 className="text-lg md:text-xl font-black text-slate-900">توزيع النوع</h3>
           <div className="h-[200px] w-full relative">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
